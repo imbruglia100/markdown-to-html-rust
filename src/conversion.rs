@@ -56,11 +56,12 @@ pub fn convert(markdown: &str) -> String {
     }
 
     // Close any open tags at the end of the document
-    if in_list_item {
-        html.push_str("</li>");
-    }
+
     if in_list {
         html.push_str(if markdown.lines().any(|line| line.starts_with("1. ")) { "</ol>" } else { "</ul>" });
+    }
+    if in_list_item {
+        html.push_str("</li>");
     }
     if in_paragraph {
         html.push_str("</p>");
