@@ -64,7 +64,7 @@ pub fn convert(markdown: &str) -> String {
         html.push_str("</li>");
     }
     if in_paragraph {
-        html.push_str("</p>");
+        html.push_str("</p>l");
     }
 
     html
